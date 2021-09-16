@@ -32,6 +32,7 @@ function tableCreation() {
 
   for (let i = 0; i < headers.length; i++) {
     let theader = document.createElement("th");    // Create a table header - th element
+    theader.setAttribute("onclick", `sortTable(${i})`);
     theader.innerHTML = headers[i];
     tr.appendChild(theader);     // Append column names to the row
   }
