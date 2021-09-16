@@ -1,7 +1,7 @@
 // Function to flatten nested object to get firstName and lastName
 function flattenObj(obj, result = {}) {
   for (let key in obj) {
-    if (typeof obj[key] == 'object') {
+    if (typeof obj[key] == "object") {
       flattenObj(obj[key], result);      // Iterate function until object becomes flat
     } else {
       result[key] = obj[key];
