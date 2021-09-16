@@ -1,0 +1,21 @@
+#box {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+#readyTable {
+  grid-column: 2;
+  border : 1px solid black;
+}
+
+th, td {
+  border : 1px solid black;
+}
+
+.text {
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -41,7 +41,10 @@ function tableCreation() {
     trow = table.insertRow(-1);  // Add another row at the end of the table
     for (let j = 0; j < headers.length; j++) {
       let cell = trow.insertCell(-1);
-      cell.innerHTML = flatData[i][headers[j]];  // Insert cell at the particular place of the table
+      let par = document.createElement("p");
+      par.setAttribute("class", "text");
+      par.innerHTML = flatData[i][headers[j]];  // Insert cell at the particular place of the table
+      cell.appendChild(par);
     }
   }
 
