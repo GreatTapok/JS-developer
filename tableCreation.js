@@ -55,6 +55,17 @@ function tableCreation() {
   // Add the created table containing json data to the HTML
   let el = document.getElementById("box");
   el.appendChild(table);
+
+  // Loop for making eyeColor column elements represented with the color
+  for (let i = 0; i < flatData.length; i++) {
+    for (let j = 0; j < headers.length; j++ ) {
+      if (headers[j] === "eyeColor") {
+        let color = document.getElementById(`t-${i}-${j}`);
+        color.style.backgroundColor = `${color.innerHTML}`;
+        color.style.color = `${color.innerHTML}`;
+      }
+    }
+  }
 }
 
 tableCreation();

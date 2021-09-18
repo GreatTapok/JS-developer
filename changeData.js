@@ -39,7 +39,11 @@ function makeChange(x){
     let inp = document.getElementById(`inp-${x}-${i}`);
     if (inp.value != "") {  // If input field is empty, there are no changes made
       let text = document.getElementById(`t-${x}-${i}`);
-      text.innerHTML = inp.value;
+      text.innerHTML = inp.value;  // Change data from table cell to data from input field
+      if (headers[i] === "eyeColor") { // If column is eyeColor color the data
+        text.style.backgroundColor = `${text.innerHTML}`;
+        text.style.color = `${text.innerHTML}`;
+      }
     }
   }
 }
