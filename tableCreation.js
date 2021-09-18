@@ -10,10 +10,11 @@ function flattenObj(obj, result = {}) {
   return result;      // Return flat object
 }
 
+let flatData = [];  //Array for data from flat object
+let headers = [];   //Array for object keys - headers of the table
+
 // Function creating table
 function tableCreation() {
-  let flatData = [];  //Array for data from flat object
-  let headers = [];   //Array for object keys - headers of the table
   for (let i = 0; i < data.length; i++) {
     flatData.push(flattenObj(data[i]));   // Push data to array
     for (let k in flatData[i]) {
@@ -32,7 +33,7 @@ function tableCreation() {
 
   for (let i = 0; i < headers.length; i++) {
     let theader = document.createElement("th");    // Create a table header - th element
-    theader.setAttribute("onclick", `sortTable(${i})`);
+    theader.setAttribute("onclick", `sortTable(${i})`); // Sort the table on click
     theader.innerHTML = headers[i];
     tr.appendChild(theader);     // Append column names to the row
   }
@@ -42,8 +43,10 @@ function tableCreation() {
     trow = table.insertRow(-1);  // Add another row at the end of the table
     for (let j = 0; j < headers.length; j++) {
       let cell = trow.insertCell(-1);
+      cell.setAttribute("onclick", `changeData(${i})`); // Create form for changing data
       let par = document.createElement("p");
       par.setAttribute("class", "text");
+      par.setAttribute("id", `t-${i}-${j}`);
       par.innerHTML = flatData[i][headers[j]];  // Insert cell at the particular place of the table
       cell.appendChild(par);
     }

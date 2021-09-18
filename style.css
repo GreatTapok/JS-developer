@@ -8,6 +8,12 @@
   border : 1px solid black;
 }
 
+#changeBox {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+
 th, td {
   border : 1px solid black;
 }
