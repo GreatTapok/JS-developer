@@ -12,8 +12,8 @@ function sortTable(n) {
       shouldSwitch = false;
 
       // Get element from one row and then one from the next   
-      firstRow = rows[i].getElementsByTagName("td")[n];
-      nextRow = rows[i + 1].getElementsByTagName("td")[n];
+      firstRow = rows[i].getElementsByTagName("p")[n];
+      nextRow = rows[i + 1].getElementsByTagName("p")[n];
 
       // Check if the two rows should switch place depnding on direction
       if (dir == "asc") {
